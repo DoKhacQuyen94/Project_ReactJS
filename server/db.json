@@ -42,8 +42,36 @@
       "testName": "History Quiz",
       "categoryId": 2,
       "image": "https://www.w3schools.com/html/html5.gif",
-      "playTime": 15,
+      "playTime": 10,
       "playAmount": 5,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            {
+              "answer": "data"
+            },
+            {
+              "answer": "operating systems"
+            },
+            {
+              "answer": "hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "software"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "testName": "Đời sống",
+      "categoryId": 1,
+      "image": "https://www.w3schools.com/html/html5.gif",
+      "playTime": 15,
+      "playAmount": 10,
       "questions": [
         {
           "content": "Which is the part of the computer system that one can physically touch?",
