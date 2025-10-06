@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Đỗ Khắc Quyền",
+      "email": "dokhacquyen@gmail.com",
+      "password": "khacquyen",
+      "role": "admin"
+    },
+    {
+      "email": "tpq0904@gmail.com",
+      "password": "12345678",
+      "fullName": "Đỗ Khắc Quyền",
+      "comfirmPassword": "12345678",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "email": "doanngu@gmail.com",
+      "password": "12345678",
+      "fullName": "Đoàn đz",
+      "comfirmPassword": "12345678",
+      "role": "user",
+      "id": 3
+    }
+  ],
+  "categorys": [
+    {
+      "id": 1,
+      "categoryName": "Đời sống",
+      "categoryImg": "🏠"
+    },
+    {
+      "categoryName": "Lịch sử",
+      "categoryImg": "📜",
+      "id": 2
+    }
+  ],
+  "test": [
+    {
+      "id": 1,
+      "testName": "History Quiz",
+      "categoryId": 2,
+      "image": "https://www.w3schools.com/html/html5.gif",
+      "playTime": 15,
+      "playAmount": 5,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            {
+              "answer": "data"
+            },
+            {
+              "answer": "operating systems"
+            },
+            {
+              "answer": "hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "software"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
