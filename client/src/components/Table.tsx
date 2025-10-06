@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ModalDelete from "./ModalDelete";
 import type { category, Test } from "../utils/Type";
 import { useDispatch } from "react-redux";
@@ -22,22 +22,31 @@ export default function Table({
   const [openAddEdit, setOpenAddEdit] = useState(false);
   const dispatch: any = useDispatch();
 
+  useEffect(() => {
+    setOpen(false);
+    setSelectedId(null);
+    setOpenAddEdit(false);
+    setEditingItem(null);
+  }, [type_management]);
+  console.log(category);
+
   const handleDeleteClickCategory = (id: number) => {
-    setSelectedId(id); // lưu id muốn xoá
-    setOpen(true); // mở modal
+    setSelectedId(id);
+    setOpen(true);
   };
+
   const handleDeleteClickTest = (id: number) => {
-    setSelectedId(id); // lưu id muốn xoá
-    setOpen(true); // mở modal
+    setSelectedId(id);
+    setOpen(true);
   };
+
   const confirmDeleteCategory = () => {
-    console.log("cofirm", selectedId);
     if (selectedId !== null) {
       dispatch(deleteCategory(selectedId));
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Xóa thành công!",
+        title: "Xóa danh mục thành công!",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -45,14 +54,14 @@ export default function Table({
       setOpen(false);
     }
   };
+
   const confirmDeleteTest = () => {
-    console.log("cofirm", selectedId);
     if (selectedId !== null) {
       dispatch(deleteTest(selectedId));
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Xóa thành công!",
+        title: "Xóa bài test thành công!",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -60,6 +69,7 @@ export default function Table({
       setOpen(false);
     }
   };
+
   return (
     <>
       {open && (
@@ -70,30 +80,30 @@ export default function Table({
           type={type_management}
         />
       )}
-      {openAddEdit && (
+
+      {openAddEdit && type_management === "catalogue" && (
         <ModalAddEdit
           setOpen={setOpenAddEdit}
-          category={category as category[]}
+          category={category}
           handleAdd={(data: category) => {
-            console.log(data);
-
             if (data.id) {
-              dispatch(editCategory(data)); // Đúng tên thunk update
+              dispatch(editCategory(data));
             }
           }}
           initialData={editingItem}
         />
       )}
-      <table className="w-full border border-gray-300 ">
+
+      <table key={type_management} className="w-full border border-gray-300">
         <thead>
           <tr className="bg-[#212529] text-white text-[14.7px] rounded-[6px] border-inherit">
-            {type_management == "catalogue" && (
+            {type_management === "catalogue" && (
               <>
                 <th className="text-center w-[15%]">ID</th>
                 <th className="p-2 w-[55%]">Tên danh mục</th>
               </>
             )}
-            {type_management == "test" && (
+            {type_management === "test" && (
               <>
                 <th className="text-center w-[4%]">ID</th>
                 <th className="p-2 w-[30%]">Tên bài test</th>
@@ -105,9 +115,10 @@ export default function Table({
             <th className="text-center w-[35%]">Hành động</th>
           </tr>
         </thead>
+
         <tbody>
           {type_management === "catalogue" &&
-            category.map((item: category) => (
+            category.map((item) => (
               <tr key={item.id} className="border border-[#DEE2E6] text-[14px]">
                 <td className="text-center">{item.id}</td>
                 <td className="text-left">
@@ -131,7 +142,7 @@ export default function Table({
                   <button
                     className="bg-[#DC3545] p-2 rounded-[4px] text-white"
                     onClick={() => {
-                      if (item?.id !== undefined) {
+                      if (item?.id) {
                         handleDeleteClickCategory(item.id);
                       }
                     }}
@@ -143,43 +154,39 @@ export default function Table({
             ))}
 
           {type_management === "test" &&
-            test.map((item) => (
-              <tr className="border border-[#DEE2E6] text-[14px]">
-                <td className="text-center">{item.id}</td>
-                <td className="p-2">{item.testName}</td>
-                <td>
-                  <div className="flex items-center gap-2 p-2">
-                    <span className="rounded-full w-[40px] h-[40px] flex justify-center items-center bg-gray-300">
-                      {
-                        category.find(
-                          (category) => category.id === item.categoryId
-                        )?.categoryImg
-                      }
-                    </span>
-                    <span>
-                      {
-                        category.find(
-                          (category) => category.id === item.categoryId
-                        )?.categoryName
-                      }
-                    </span>
-                  </div>
-                </td>
-                <td className="p-2">{item.playAmount}</td>
-                <td className="p-2">{item.playTime} min</td>
-                <td className="text-center space-x-2">
-                  <button className="bg-[#FFC107] p-2 rounded-[4px]">
-                    Sửa
-                  </button>
-                  <button
-                    className="bg-[#DC3545] p-2 rounded-[4px] text-white"
-                    onClick={() => handleDeleteClickTest(item.id)}
-                  >
-                    Xóa
-                  </button>
-                </td>
-              </tr>
-            ))}
+            test.map((item) => {
+              const cate = category.find((c) => c.id === item.categoryId);
+              return (
+                <tr
+                  key={item.id}
+                  className="border border-[#DEE2E6] text-[14px]"
+                >
+                  <td className="text-center">{item.id}</td>
+                  <td className="p-2">{item.testName}</td>
+                  <td>
+                    <div className="flex items-center gap-2 p-2">
+                      <span className="rounded-full w-[40px] h-[40px] flex justify-center items-center bg-gray-300">
+                        {cate?.categoryImg}
+                      </span>
+                      <span>{cate?.categoryName}</span>
+                    </div>
+                  </td>
+                  <td className="p-2">{item.playAmount}</td>
+                  <td className="p-2">{item.playTime} min</td>
+                  <td className="text-center space-x-2">
+                    <button className="bg-[#FFC107] p-2 rounded-[4px]">
+                      Sửa
+                    </button>
+                    <button
+                      className="bg-[#DC3545] p-2 rounded-[4px] text-white"
+                      onClick={() => handleDeleteClickTest(item.id)}
+                    >
+                      Xóa
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </>

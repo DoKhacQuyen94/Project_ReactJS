@@ -5,7 +5,8 @@ import type { Test } from "../../utils/Type";
 export const getTest = createAsyncThunk("getTest", async () => {
   try {
     const res = await axios.get("http://localhost:8080/test");
-  
+    console.log(res.data);
+    
     return res.data;
   } catch (error) {
     console.log(error);

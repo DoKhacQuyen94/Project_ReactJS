@@ -44,6 +44,7 @@
       "image": "https://www.w3schools.com/html/html5.gif",
       "playTime": 10,
       "playAmount": 5,
+      "Total":1,
       "questions": [
         {
           "content": "Which is the part of the computer system that one can physically touch?",
@@ -70,8 +71,183 @@
       "testName": "Đời sống",
       "categoryId": 1,
       "image": "https://www.w3schools.com/html/html5.gif",
-      "playTime": 15,
+      "playTime": 1,
       "playAmount": 10,
+      "Total":2,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            {
+              "answer": "data"
+            },
+            {
+              "answer": "operating systems"
+            },
+            {
+              "answer": "hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "software"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "testName": "Đời sống",
+      "categoryId": 1,
+      "image": "https://www.w3schools.com/html/html5.gif",
+      "playTime": 1,
+      "playAmount": 10,
+      "Total":2,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            {
+              "answer": "data"
+            },
+            {
+              "answer": "operating systems"
+            },
+            {
+              "answer": "hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "software"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "testName": "Đời sống",
+      "categoryId": 1,
+      "image": "https://www.w3schools.com/html/html5.gif",
+      "playTime": 1,
+      "playAmount": 10,
+      "Total":2,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            {
+              "answer": "data"
+            },
+            {
+              "answer": "operating systems"
+            },
+            {
+              "answer": "hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "software"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "testName": "Đời sống",
+      "categoryId": 1,
+      "image": "https://www.w3schools.com/html/html5.gif",
+      "playTime": 1,
+      "playAmount": 10,
+      "Total":2,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            {
+              "answer": "data"
+            },
+            {
+              "answer": "operating systems"
+            },
+            {
+              "answer": "hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "software"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "testName": "Đời sống",
+      "categoryId": 1,
+      "image": "https://www.w3schools.com/html/html5.gif",
+      "playTime": 1,
+      "playAmount": 10,
+      "Total":2,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            {
+              "answer": "data"
+            },
+            {
+              "answer": "operating systems"
+            },
+            {
+              "answer": "hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "software"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "testName": "Đời sống",
+      "categoryId": 1,
+      "image": "https://www.w3schools.com/html/html5.gif",
+      "playTime": 1,
+      "playAmount": 10,
+      "Total":2,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            {
+              "answer": "data"
+            },
+            {
+              "answer": "operating systems"
+            },
+            {
+              "answer": "hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "software"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "testName": "Đời sống",
+      "categoryId": 1,
+      "image": "https://www.w3schools.com/html/html5.gif",
+      "playTime": 1,
+      "playAmount": 10,
+      "Total":2,
       "questions": [
         {
           "content": "Which is the part of the computer system that one can physically touch?",

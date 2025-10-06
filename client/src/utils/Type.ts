@@ -36,5 +36,6 @@ export interface Test {
   image: string;
   playTime: number;
   playAmount: number;
+  Total:number
   questions: Question[];
 }
