@@ -21,6 +21,7 @@ export default function Table({
   const [editingItem, setEditingItem] = useState<category | null>(null);
   const [openAddEdit, setOpenAddEdit] = useState(false);
   const dispatch: any = useDispatch();
+
   const handleDeleteClickCategory = (id: number) => {
     setSelectedId(id); // lưu id muốn xoá
     setOpen(true); // mở modal

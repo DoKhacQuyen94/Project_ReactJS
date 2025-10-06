@@ -23,7 +23,10 @@ export default function ModalDelete({
           <span>Bạn có xác nhận xóa bài test này</span>
         </div>
         <div className="footer-modal p-4 border-t border-gray-300 flex justify-end gap-2">
-          <button className="bg-[#6c757d] p-2 rounded-[6px] text-white">
+          <button
+            className="bg-[#6c757d] p-2 rounded-[6px] text-white"
+            onClick={() => setDelete(false)}
+          >
             Hủy
           </button>
           {type === "catalogue" && (
